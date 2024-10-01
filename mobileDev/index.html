@@ -1,0 +1,54 @@
+<!-- DEFAULT USERNAME AND PASSWORD FOR LOGIN
+    USERNAME: tian2001
+    PASSWORD: qwerty
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar mode = "ios" color="primary">
+                <ion-title>Welcome to Gshock</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <!-- CONTENT OF THE APP -->
+         <ion-content>
+            <ion-item>
+                <ion-input 
+                id="uName"
+                label="Enter Username"
+                label-placement="floating" 
+                ></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-input type = "password"
+                id="pass" 
+                label="Enter Password"
+                label-placement="floating" 
+                ></ion-input>
+            </ion-item>
+            <br>
+            <br>
+            
+            <!-- BUTTON -->
+            <ion-button expand="block" onclick="checkInputs()" color="dark">LOGIN <ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+         </ion-content>
+    </ion-app>
+
+    <!-- JS SCRIPT -->
+<script src="style.js"></script>
+
+</body>
+</html>

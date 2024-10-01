@@ -1,0 +1,64 @@
+<!-- DEFAULT USERNAME AND PASSWORD FOR LOGIN
+    USERNAME: tian2001
+    PASSWORD: qwerty
+-->
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <ion-app>
+        <!-- HEADER -->
+        <ion-header>
+            <ion-toolbar mode = "ios" color = "primary">
+                <ion-title>Payment</ion-title>
+            </ion-toolbar>    
+        </ion-header>
+        <br>
+        <!-- CONTENT -->
+        <ion-content>
+            <ion-text id="text1">Select Payment Option:</ion-text>
+            <ion-list id="homeList">
+                <ion-item>
+                <ion-select id = "pOption" label="Payment Option">
+                    <ion-select-option value="gcash">Gcash</ion-select-option>
+                    <ion-select-option value="visa">Visa</ion-select-option>
+                    <ion-select-option value="creditcard">Credit Card</ion-select-option>
+                </ion-select>
+                </ion-item>
+            
+                <ion-item>
+                    <ion-select id="merchant" label="Merchant">
+                    <ion-select-option value="meralco">Meralco</ion-select-option>
+                    <ion-select-option value="tarelco">Tarelco</ion-select-option>
+                    <ion-select-option value="homecredit">Home Credit</ion-select-option>
+                    <ion-select-option value="dragonpay">DragonPay</ion-select-option>
+                    <ion-select-option value="xsolla">Xsolla</ion-select-option>
+                    <ion-select-option value="converge">Converge ICT</ion-select-option>
+                    <ion-select-option value="pldt">PLDT</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input id="accNumber" 
+                    label="Account Number"
+                    label-placement="floating" 
+                    ></ion-input>
+                </ion-item>
+  
+            </ion-list>
+                <ion-button id="button2" expand="block" onclick="pPayment()" color="dark">PROCEED TO PAYMENT <ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+        </ion-content>
+    </ion-app>
+
+    <script src="style.js"></script>
+</body>
+</html>

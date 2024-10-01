@@ -1,0 +1,66 @@
+<!-- DEFAULT USERNAME AND PASSWORD FOR LOGIN
+    USERNAME: tian2001
+    PASSWORD: qwerty
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar mode = "ios" color = "primary">
+                <ion-title>Confirm Payment</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <br>
+        <ion-content>
+                <ion-text id="text2">Confirm Payment:</ion-text>
+            <ion-list id="paymentList">
+                <ion-item>
+                    <ion-input id="accNumber1" 
+                    label="Account Number"
+                    label-placement="floating" 
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input id="amount" 
+                    label="Amount"
+                    label-placement="floating" 
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input id="email" 
+                    label="Email"
+                    label-placement="floating" 
+                    ></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <ion-button id="button2" expand="block" onclick="success()" color="dark">PROCEED TO PAYMENT <ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+            <ion-button id="button3" expand="block" onclick="back()" color="dark">BACK <ion-icon name="arrow-back-circle-outline"></ion-icon></ion-icon></ion-button>
+        </ion-content>
+
+        <div>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Display Result</ion-card-title>
+              </ion-card-header>
+              <ion-card-content id="res"></ion-card-content>
+            </ion-card>
+          </div>
+    </ion-app>
+
+    <script src="style.js"></script>
+</body>
+</html>

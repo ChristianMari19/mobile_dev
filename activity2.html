@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-header>
+        <ion-toolbar>
+          <ion-title>Food Delivery Form</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+    <ion-content class="ion-padding">
+     
+        <ion-item>
+            <ion-label position="floating">Delivery Address</ion-label><br>
+            <ion-input placeholder = "Enter your Address" id="dAdd"></ion-input>
+        </ion-item>
+
+        <ion-list>
+            <ion-item>
+                <ion-select label="Payment Method" id="paymentM" (ionChange)="myFunction()">
+                    <ion-select-option value="cCard">Credit Card</ion-select-option>
+                    <ion-select-option value="pPal">PayPal</ion-select-option>
+                    <ion-select-option value="cOd">Cash on Delivery</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item id="disContent" style="display:none;">
+                <ion-input type="number" placeholder="Cash on Hand"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <ion-item>
+            <ion-label>Save Payment Method</ion-label>
+            <ion-checkbox id="pMethod"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Food Price</ion-label><br>
+            <ion-input placeholder = "Enter Price" id="dAdd"></ion-input>
+        </ion-item>
+    
+        <ion-button expand="block" onclick="submit()">Submit Order</ion-button>
+        
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Display Result</ion-card-title>
+            </ion-card-header>
+            <ion-card-content id="res"></ion-card-content>
+          </ion-card>
+        </div>
+    </ion-content>
+</body>
+
+<script>
+    document.getElementById("paymentM").addEventListener("ionChange", myFunction)
+    
+    function myFunction() {
+        let paymentM = document.getElementById("paymentM").value
+        let disContent = document.getElementById("disContent")
+        if (paymentM == "cOd"){
+            disContent.style.display = "block"
+        } else {
+            disContent.style.display = "none"
+        }
+    }
+
+    function submit() {
+    const paymentM = document.getElementById('paymentM').value
+    const dAdd = document.getElementById('dAdd').value
+    const pMethod = document.getElementById('pMethod')
+    let paymentT = "";
+    
+    if (paymentM == "cCard") {
+        paymentT = "Credit Card";
+        document.getElementById('res').innerHTML = "Address: " + dAdd
+        document.getElementById('res').innerHTML += "<br>Payment Method: " + paymentT
+    }
+
+    if (paymentM == "pPal") {
+        paymentT = "PayPal";
+        document.getElementById('res').innerHTML = "Address: " + dAdd
+        document.getElementById('res').innerHTML += "<br>Payment Method: " + paymentT
+    }
+
+    if (paymentM == "cOd") {
+        paymentT = "Cash on Delivery";
+        document.getElementById('res').innerHTML = "Address: " + dAdd
+        document.getElementById('res').innerHTML += "<br>Payment Method: " + paymentT
+    }
+
+    if (pMethod.checked) {
+        document.getElementById('res').innerHTML += "<br>Payment Method will be saved"
+    } else {
+        document.getElementById('res').innerHTML += "<br>Payment Method will not be saved"
+    }
+}
+    </script>
+</html>
